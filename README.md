@@ -1,2 +1,4 @@
 # spotlight-templates-react
-spotlight templates 常规react环境
+spotlight scaffold template for react
+<br/><br/>
+It‘s comming
