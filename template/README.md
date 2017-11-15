@@ -19,4 +19,4 @@ This template is base on webpack, support for react development <br>
 1.配置在build/config.js 当中；<br>
   Configures in build/config.js <br><br>
 
-Let's react enjoy!
+Let's react ，enjoy!
