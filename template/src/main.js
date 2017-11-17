@@ -10,3 +10,8 @@ import App from 'C/app';
 render(<App />, 
 document.getElementById('app'));
 
+
+/* webpack hot reload*/
+if (module.hot) {
+    module.hot.accept();
+}
