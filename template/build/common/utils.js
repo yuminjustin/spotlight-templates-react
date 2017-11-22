@@ -1,5 +1,6 @@
 /* 处理函数 */
 var path = require('path')
+var config = require("../config")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -29,15 +30,15 @@ exports.cssLoaders = function (options) {
                 })
             })
         }
-         
+
         if (options.extract) {
             return ExtractTextPlugin.extract({
-              use: loaders,
-              fallback: 'style-loader'
+                use: loaders,
+                fallback: 'style-loader'
             })
-          } else {
+        } else {
             return ['style-loader'].concat(loaders)
-          }
+        }
 
     }
 
@@ -92,13 +93,19 @@ exports.HtmlWPMaker = function (config) {
                 removeAttributeQuotes: true
             }
             temp.chunksSortMode = 'dependency'
-            // 多入口时 在配置中定义exclude 去屏蔽其他 chuck
-            // eg.  exclude: ['app']
-            if(config.htmlOption[i].exclude){
-                temp.excludeChunks = config.htmlOption[i].exclude
-            }
         }
         arr.push(new HtmlWebpackPlugin(temp))
     }
     return arr;
+}
+
+// 为sever 添加入口 
+exports.addServerEntry  = function (entry){
+    
+    var entryArr = Object.keys(entry)
+ 
+    entryArr.map(function(e){
+        entry[e].unshift("webpack-dev-server/client?http://localhost:" + config.dev.port + "/","webpack/hot/dev-server")
+    })
+ 
 }
