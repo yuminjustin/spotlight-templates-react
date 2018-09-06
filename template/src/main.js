@@ -1,6 +1,6 @@
-import '@/assets/css/reset.css';
-import '@/assets/css/style.css';
-import 'babel-polyfill'
+import 'B/assets/css/reset.css';
+import 'B/assets/css/style.css';
+import '@babel/polyfill'
 /* react*/
 import React from 'react';
 import { render } from 'react-dom';
