@@ -8,7 +8,7 @@ class Test extends Component {
     return (
       <div className="hw">
         <p>{this.state.text}</p>
-        <img src="./static/image/sp_wihte.png" />
+        <img src="./static/image/white.png" />
       </div>
     );
   }

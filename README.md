@@ -3,7 +3,7 @@ spotlight scaffold template for react<br>
 
 ## Use：
 
-     spotlight init react my-project
+     spotlight react my-project
 
      cd my-project
 
