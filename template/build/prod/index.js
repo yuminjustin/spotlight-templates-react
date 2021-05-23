@@ -6,7 +6,7 @@ var chalk = require('chalk')
 var spinner = ora('开始打包,请稍后...')
 spinner.start()
 
-shell.exec('webpack --config build/prod/wp_prod.js', {
+shell.exec('cross-env NODE_ENV=production webpack --config build/prod/prod.js', {
     silent: true
 }, function (code, stdout, stderr) {
     spinner.stop()
